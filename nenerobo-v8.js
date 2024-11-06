@@ -5,10 +5,14 @@
  * @license AGPL-3.0
  */
 
-'use strict';
+// Load modules
+import { Util } from './modules/util.js';
 
-function onMessage(event) {}
+export function onMessage(event) {
+  const util = new Util(event.message);
+  event.room.send(util.greeting());
+}
 
-function onMessageDeleted(event) {}
+export function onMessageDeleted(event) {}
 
-function onStartCompile() {}
+export function onStartCompile() {}
